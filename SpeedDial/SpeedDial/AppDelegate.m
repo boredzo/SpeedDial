@@ -31,6 +31,8 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)sotification {
+	[_mgr saveBookmarks];
+
 	[_wc close];
 	_wc = nil;
 	_mgr = nil;

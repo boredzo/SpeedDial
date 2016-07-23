@@ -12,6 +12,9 @@
 
 @interface BookmarksManager : NSObject <NSFastEnumeration>
 
+///Save bookmarks to persistent storage. They're reloaded automatically when the BookmarksManager inits.
+- (void) saveBookmarks;
+
 @property(nonatomic, readonly) NSUInteger count;
 - (VNCBookmark *_Nonnull) objectAtIndexedSubscript:(NSUInteger)idx;
 

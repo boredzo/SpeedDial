@@ -18,4 +18,9 @@
 ///Create an NSURL that represents the contents of this bookmark.
 @property(nonatomic, readonly, nullable) NSURL *URL;
 
+///Deserialize bookmark dictionaries that you might have got from NSUserDefaults.
++ (NSArray <VNCBookmark *> *_Nullable) arrayOfBookmarksFromArrayOfDictionaries:(NSArray <NSDictionary *> *_Nullable)savedBookmarks;
+///Serialize bookmark dictionaries so that you can store them in NSUserDefaults.
++ (NSArray <NSDictionary *> *_Nonnull) arrayOfDictionariesFromArrayOfBookmarks:(NSArray <VNCBookmark *> *_Nonnull)bookmarks;
+
 @end
