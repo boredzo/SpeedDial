@@ -15,4 +15,7 @@
 @property(nullable, copy) NSString *password;
 @property(nullable, copy) NSString *hostname;
 
+///Create an NSURL that represents the contents of this bookmark.
+@property(nonatomic, readonly, nullable) NSURL *URL;
+
 @end

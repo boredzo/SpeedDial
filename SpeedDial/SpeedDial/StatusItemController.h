@@ -1,5 +1,5 @@
 //
-//  PreferencesWindowController.h
+//  StatusItemController.h
 //  SpeedDial
 //
 //  Created by Peter Hosey on 2016-07-23.
@@ -9,11 +9,11 @@
 #import <Cocoa/Cocoa.h>
 
 @class BookmarksManager;
+@class PreferencesWindowController;
 
-@interface PreferencesWindowController : NSWindowController
+@interface StatusItemController : NSObject
 
 @property(weak) BookmarksManager *bookmarksManager;
-
-- (IBAction) showPreferences:(id)sender;
+@property(weak) PreferencesWindowController *preferencesWindowController;
 
 @end

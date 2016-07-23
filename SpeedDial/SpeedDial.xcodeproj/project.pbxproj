@@ -15,6 +15,7 @@
 		31454A7B1D440B1500925A2A /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31454A791D440B1500925A2A /* PreferencesWindowController.xib */; };
 		31454A7E1D440FD900925A2A /* VNCBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 31454A7D1D440FD900925A2A /* VNCBookmark.m */; };
 		31454A811D44136D00925A2A /* BookmarksManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31454A801D44136D00925A2A /* BookmarksManager.m */; };
+		31454A841D44195F00925A2A /* StatusItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31454A831D44195F00925A2A /* StatusItemController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		31454A7D1D440FD900925A2A /* VNCBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VNCBookmark.m; sourceTree = "<group>"; };
 		31454A7F1D44136D00925A2A /* BookmarksManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarksManager.h; sourceTree = "<group>"; };
 		31454A801D44136D00925A2A /* BookmarksManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarksManager.m; sourceTree = "<group>"; };
+		31454A821D44195F00925A2A /* StatusItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemController.h; sourceTree = "<group>"; };
+		31454A831D44195F00925A2A /* StatusItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				31454A7D1D440FD900925A2A /* VNCBookmark.m */,
 				31454A7F1D44136D00925A2A /* BookmarksManager.h */,
 				31454A801D44136D00925A2A /* BookmarksManager.m */,
+				31454A821D44195F00925A2A /* StatusItemController.h */,
+				31454A831D44195F00925A2A /* StatusItemController.m */,
 				31454A711D440AA800925A2A /* Info.plist */,
 				31454A691D440AA800925A2A /* Supporting Files */,
 			);
@@ -163,6 +168,7 @@
 				31454A7E1D440FD900925A2A /* VNCBookmark.m in Sources */,
 				31454A7A1D440B1500925A2A /* PreferencesWindowController.m in Sources */,
 				31454A681D440AA800925A2A /* AppDelegate.m in Sources */,
+				31454A841D44195F00925A2A /* StatusItemController.m in Sources */,
 				31454A811D44136D00925A2A /* BookmarksManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

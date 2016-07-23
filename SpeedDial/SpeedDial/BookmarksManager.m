@@ -27,6 +27,15 @@
 	return [_bookmarks objectAtIndexedSubscript:idx];
 }
 
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
+	objects:(__unsafe_unretained id  _Nonnull *)buffer
+	count:(NSUInteger)len
+{
+	return [_bookmarks countByEnumeratingWithState:state
+		objects:buffer
+		count:len];
+}
+
 - (VNCBookmark *_Nonnull) addNewEmptyBookmarkAtEnd {
 	VNCBookmark *_Nonnull const newBookmark = [VNCBookmark new];
 	[_bookmarks addObject:newBookmark];

@@ -30,6 +30,10 @@
     [super windowDidLoad];
 }
 
+- (IBAction) showPreferences:(id)sender {
+	[self showWindow:sender];
+}
+
 - (IBAction)addBookmark:(id)sender {
 	VNCBookmark *_Nonnull const newBookmark = [self.bookmarksManager addNewEmptyBookmarkAtEnd];
 

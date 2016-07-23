@@ -10,7 +10,7 @@
 
 #import "VNCBookmark.h"
 
-@interface BookmarksManager : NSObject
+@interface BookmarksManager : NSObject <NSFastEnumeration>
 
 @property(nonatomic, readonly) NSUInteger count;
 - (VNCBookmark *_Nonnull) objectAtIndexedSubscript:(NSUInteger)idx;
