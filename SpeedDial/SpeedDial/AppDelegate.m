@@ -8,21 +8,26 @@
 
 #import "AppDelegate.h"
 
+#import "BookmarksManager.h"
 #import "PreferencesWindowController.h"
 
 @implementation AppDelegate
 {
+	BookmarksManager *_mgr;
 	PreferencesWindowController *_wc;
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
+	_mgr = [BookmarksManager new];
 	_wc = [PreferencesWindowController new];
+	_wc.bookmarksManager = _mgr;
 	[_wc showWindow:nil]; //TEMP
 }
 
 - (void)applicationWillTerminate:(NSNotification *)sotification {
 	[_wc close];
 	_wc = nil;
+	_mgr = nil;
 }
 
 @end

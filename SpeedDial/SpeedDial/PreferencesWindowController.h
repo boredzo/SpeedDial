@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class BookmarksManager;
+
 @interface PreferencesWindowController : NSWindowController
+
+@property(weak) BookmarksManager *bookmarksManager;
 
 @end

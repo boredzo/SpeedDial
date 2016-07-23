@@ -9,6 +9,7 @@
 #import "PreferencesWindowController.h"
 
 #import "VNCBookmark.h"
+#import "BookmarksManager.h"
 
 @interface PreferencesWindowController () <NSOutlineViewDataSource>
 
@@ -20,15 +21,9 @@
 @end
 
 @implementation PreferencesWindowController
-{
-	NSMutableArray <VNCBookmark *> *_bookmarks;
-}
 
-- (instancetype)init {
-	if ((self = [self initWithWindowNibName:NSStringFromClass(self.class)])) {
-		_bookmarks = [NSMutableArray new];
-	}
-	return self;
+- (instancetype) init {
+	return [self initWithWindowNibName:NSStringFromClass(self.class)];
 }
 
 - (void)windowDidLoad {
@@ -36,8 +31,8 @@
 }
 
 - (IBAction)addBookmark:(id)sender {
-	VNCBookmark *_Nonnull const newBookmark = [VNCBookmark new];
-	[_bookmarks addObject:newBookmark];
+	VNCBookmark *_Nonnull const newBookmark = [self.bookmarksManager addNewEmptyBookmarkAtEnd];
+
 	[self.outlineView reloadItem:nil reloadChildren:YES];
 	[self.outlineView editColumn:0
 		row:[self.outlineView rowForItem:newBookmark]
@@ -47,21 +42,21 @@
 
 - (IBAction)removeBookmark:(id)sender {
 	NSIndexSet *_Nonnull const selectedRowIndexes = self.outlineView.selectedRowIndexes;
-	[_bookmarks removeObjectsAtIndexes:selectedRowIndexes];
+	[self.bookmarksManager removeBookmarksAtIndexes:selectedRowIndexes];
 }
 
 #pragma mark - NSOutlineViewDataSource conformance
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
 	if (item == nil) {
-		return _bookmarks.count;
+		return self.bookmarksManager.count;
 	}
 	return 0;
 }
 
 - (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)idx ofItem:(id)item {
 	if (item == nil) {
-		return _bookmarks[idx];
+		return self.bookmarksManager[idx];
 	}
 	return nil;
 }
