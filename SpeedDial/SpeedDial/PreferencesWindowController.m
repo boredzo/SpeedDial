@@ -32,6 +32,7 @@
 
 - (IBAction) showPreferences:(id)sender {
 	[self showWindow:sender];
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 - (IBAction)addBookmark:(id)sender {
