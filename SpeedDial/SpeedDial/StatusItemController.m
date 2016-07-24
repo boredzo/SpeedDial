@@ -23,9 +23,7 @@
 - (instancetype) init {
 	if ((self = [super init])) {
 		_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-		// https://github.com/boredzo/SpeedDial/issues/4
-//		_statusItem.image = [NSImage imageNamed:@"SpeedDialStatusItemTemplate"];
-		_statusItem.image = [NSImage imageNamed:NSImageNameHomeTemplate];
+		_statusItem.image = [NSImage imageNamed:@"SpeedDialStatusItemTemplate"];
 
 		NSMenu *_Nonnull const menu = [[NSMenu alloc] initWithTitle:@""];
 		menu.delegate = self;

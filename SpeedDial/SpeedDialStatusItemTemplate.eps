@@ -1,0 +1,97 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 16 16
+%%EndComments
+
+% x y w h -> plotrect -> -
+/plotrect {
+4 dict begin
+/h exch def
+/w exch def
+/y exch def
+/x exch def
+
+x y moveto
+w 0 rlineto
+0 h rlineto
+w neg 0 rlineto
+closepath
+
+end
+} def
+
+% x y w h r -> plotroundrect -> -
+/plotroundrect {
+5 dict begin
+/r exch def
+/h exch def
+/w exch def
+/y exch def
+/x exch def
+
+% Start in the middle of the bottom segment.
+x y moveto
+w 2 div 0 rmoveto
+
+% Lower-right
+w r sub x add
+0 r add y add
+r 270 360 arc
+
+% Upper-right
+w r sub x add
+h r sub y add
+r 0 90 arc
+
+% Upper-left
+0 r add x add
+h r sub y add
+r 90 180 arc
+
+% Lower-left
+0 r add x add
+0 r add y add
+r 180 270 arc
+
+closepath
+end
+} def
+
+% x y w h r g lw -> strokeroundrect -> -
+/strokeroundrect {
+	setlinewidth
+	setgray
+	plotroundrect
+	stroke
+} def
+
+% x y w h r g -> fillroundrect -> -
+/fillroundrect {
+	setgray
+	5 dict begin
+	/r exch def
+	/h exch def
+	/w exch def
+	/y exch def
+	/x exch def
+
+	x 0.5 add y 0.5 add w 1 sub h 1 sub r 0.5 sub plotroundrect
+	fill
+	end
+} def
+
+/edgegray 1 def
+/strokegray 0 def
+/fillgray 1 def
+
+gsave
+0 0 16 16 plotrect
+3.5 3.5 10 7 2 plotroundrect
+eoclip
+newpath
+
+2 6 9 7 2 edgegray 2 strokeroundrect
+2 6 9 7 2 strokegray 1 strokeroundrect
+grestore
+
+5 2 9 7 2 edgegray 2 strokeroundrect
+5 2 9 7 2 strokegray 1 strokeroundrect
